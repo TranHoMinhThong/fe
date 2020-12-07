@@ -1,0 +1,13 @@
+
+<div class="container-fluid">
+    <div class="row">
+        <div class="col-xs-4 col-sm-4 col-md-4 col-lg-4">
+            <app-bill [billData]="billData"></app-bill>
+        </div>
+        <div class="col-xs-8 col-sm-8 col-md-8 col-lg-8">
+            <app-camera (generateBill)="onGenerateBill($event)"></app-camera>
+        </div>
+    </div>
+    
+</div>
+

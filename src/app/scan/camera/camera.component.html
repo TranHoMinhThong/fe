@@ -1,0 +1,36 @@
+<div class="card text-white bg-dark">
+  <div class="card-body">
+    <div class="container-fluid">
+      
+      <div class="row">
+        <div class="col-xs-6 col-sm-6 col-md-6 col-lg-6">
+          <h4 class="card-title">
+            This is your camera view</h4>
+          <webcam
+            [height]="400"
+            [width]="400"
+            [trigger]="triggerObservable"
+            (imageCapture)="handleImage($event)"
+          ></webcam>
+        </div>
+        <div class="col-xs-6 col-sm-6 col-md-6 col-lg-6">
+          <h4 class="card-title">This is the most recent taken shot</h4>
+          <!-- Snapshot Div where image will be shown -->
+          <div class="snapshot text-center" *ngIf="webcamImage">
+            <img
+              [src]="webcamImage.imageAsDataUrl"
+              [height]="400"
+              [width]="400"
+            />
+          </div>
+        </div>
+        <div class="col-xs-4 col-sm-4 col-md-4 col-lg-4">
+          <button class="btnAction btn btn-primary" (click)="triggerSnapshot()">
+            Take A Snapshot
+          </button>
+        </div>
+      </div>
+      
+    </div>
+  </div>
+</div>

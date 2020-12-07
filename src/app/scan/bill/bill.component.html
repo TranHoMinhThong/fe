@@ -1,0 +1,17 @@
+<div class="card border-primary">
+  <div class="card-body">
+    <h4 class="card-title">Your bill</h4>
+    <hr />
+    <p>Bill Id: {{billData.id}}</p>
+    <p>Created: {{billData.createdAt}}</p>
+    <p>List of items:</p>
+    <ag-grid-angular
+      style="width: 380px; height: 250px"
+      class="ag-theme-alpine"
+      [rowData]="billData.items"
+      [columnDefs]="colDefs"
+    >
+    </ag-grid-angular>
+    <p>Total Price: {{billData.totalPrice}}</p>
+  </div>
+</div>
