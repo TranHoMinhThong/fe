@@ -8,7 +8,7 @@ import { WebcamImage } from 'ngx-webcam';
   providedIn: 'root'
 })
 export class ApiServiceService {
-  private url = ''
+  private url = '192.168.11.3:3000/api/bills/'
 
   private price = 1;
 
@@ -19,7 +19,7 @@ export class ApiServiceService {
   constructor(private http: HttpClient) { }
 
   generateBill(image: WebcamImage): Observable<BillInfo> {
-    return this.http.post<BillInfo>(this.url, image.imageAsBase64, this.httpOptions)
+    return this.http.post<BillInfo>(this.url, { image: image.imageAsBase64 }, this.httpOptions)
   }
   generateFakeBill(image: WebcamImage): Observable<BillInfo> {
     this.price++;

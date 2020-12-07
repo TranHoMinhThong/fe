@@ -36,7 +36,7 @@ export class CameraComponent implements OnInit {
         this.generateBill.emit(res)
       }
     ) */
-    this.apiService.generateFakeBill(webcamImage).subscribe(
+    this.apiService.generateBill(webcamImage).subscribe(
       res => {
         this.generateBill.emit(res)
       }
